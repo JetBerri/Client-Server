@@ -4,7 +4,7 @@ import java.io.*;
 public class client{
     public static void main(String[] args) throws IOException{
         try (Socket s = new Socket("127.0.0.1",8080)) {
-            PrintWrite w = new PrintWrite(s.getOutputStream());
+            PrintWriter w = new PrintWriter(s.getOutputStream());
 
             w.println("Message from client.");
             ((Flushable) w).flush();
